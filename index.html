@@ -3,82 +3,259 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reza's verjaardag</title>
+<title>Reza's verjaardag · 24 oktober 2026</title>
+<meta name="description" content="Uitnodiging voor Reza's verjaardag op 24 oktober 2026 in Utrecht.">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
-:root{--gold:#d8b56a;--cream:#f5e7bd;--dark:#070707}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --gold:#d9b56b;
+  --gold2:#f3d79a;
+  --cream:#f7eedc;
+  --black:#080807;
+  --panel:#11110f;
+}
 *{box-sizing:border-box}
-body{margin:0;background:#030303;color:var(--cream);font-family:Montserrat,Arial,sans-serif}
-.page{min-height:100vh;display:grid;place-items:center;padding:20px;position:relative;overflow:hidden}
-.page:before{content:"";position:absolute;inset:12px;border:1px solid rgba(216,181,106,.35);pointer-events:none}
-.card{width:min(760px,94vw);min-height:calc(100vh - 40px);max-height:900px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:34px 24px;position:relative}
-.ornament{font-family:Cinzel,serif;letter-spacing:.45em;color:var(--gold);font-size:12px}
-h1{font:600 clamp(38px,8vw,76px)/.98 Cinzel,serif;letter-spacing:.08em;margin:14px 0;color:#fff2ca}
-h2{font:500 clamp(22px,5vw,36px) Cinzel,serif;letter-spacing:.12em;margin:8px 0 20px}
-.subtitle{letter-spacing:.28em;text-transform:uppercase;font-size:12px;margin-top:8px}
-.photo-wrap{margin:24px 0 18px;position:relative}
-.photo{width:min(300px,68vw);height:min(300px,68vw);object-fit:cover;border-radius:50%;border:2px solid var(--gold);padding:6px;background:#0b0b0b;box-shadow:0 0 45px rgba(216,181,106,.16)}
-.photo2{display:none}
-.details{font:500 20px/1.8 Cinzel,serif}
-.small{font-size:14px;letter-spacing:.08em;opacity:.8;margin-top:14px}
-.divider{display:flex;align-items:center;gap:14px;width:min(430px,80vw);margin:10px 0}
-.divider:before,.divider:after{content:"";height:1px;background:var(--gold);opacity:.5;flex:1}
-.divider span{color:var(--gold)}
-button{font:600 13px Montserrat,Arial;border:1px solid var(--gold);background:var(--gold);color:#090909;padding:14px 25px;border-radius:2px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;margin-top:22px}
-button:hover{filter:brightness(1.1);transform:translateY(-1px)}
-#rsvp{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);place-items:center;padding:25px;z-index:5}
-.modal{width:min(520px,92vw);border:1px solid var(--gold);background:#090909;padding:34px;text-align:center}
-input{width:100%;padding:14px;background:#111;border:1px solid #806b43;color:white;margin:15px 0;font-size:16px}
-.close{background:transparent;color:var(--cream);margin-left:8px}
-@keyframes reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.reveal{animation:reveal 1s ease both}
+html,body{margin:0;min-height:100%;background:#050505;color:#fff}
+body{
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(217,181,107,.13), transparent 32%),
+    radial-gradient(circle at 10% 80%, rgba(217,181,107,.06), transparent 25%),
+    #050505;
+}
+body:before{
+  content:"";position:fixed;inset:14px;pointer-events:none;
+  border:1px solid rgba(217,181,107,.25);z-index:20;
+}
+.shell{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:52px 18px}
+.card{
+  width:min(920px,100%);
+  position:relative;
+  padding:14px;
+  background:linear-gradient(135deg,#cda75b,#f1d18a 12%,#8e6a32 50%,#efd18b 88%,#a77e3c);
+  box-shadow:0 28px 100px rgba(0,0,0,.8),0 0 55px rgba(217,181,107,.08);
+  animation:cardIn 1.2s ease both;
+}
+.card:before{content:"";position:absolute;inset:4px;border:1px solid rgba(255,255,255,.55);pointer-events:none}
+.inner{
+  position:relative;overflow:hidden;min-height:650px;
+  background:
+    linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.86)),
+    url("Aiko_verjaardag.gif") center 28%/cover no-repeat,
+    #0a0a09;
+  border:1px solid #080807;
+}
+.inner:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 0 48%,rgba(217,181,107,.10) 50%,transparent 52%),
+    radial-gradient(circle at 50% 50%,transparent 0 45%,rgba(0,0,0,.45) 100%);
+  mix-blend-mode:screen;
+}
+.content{position:relative;z-index:2;min-height:650px;padding:48px 46px 42px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.kicker{font-size:11px;letter-spacing:.42em;color:var(--gold2);margin-bottom:20px;text-transform:uppercase;animation:fadeUp 1s .25s both}
+.monogram{font-family:Cinzel,serif;font-size:54px;line-height:1;color:var(--gold2);letter-spacing:.04em;text-shadow:0 0 25px rgba(243,215,154,.2);animation:fadeUp 1s .35s both}
+.title{font-family:Cinzel,serif;font-size:clamp(30px,6vw,60px);letter-spacing:.14em;margin:10px 0 4px;color:#fff;animation:fadeUp 1s .45s both}
+.subtitle{font-size:12px;letter-spacing:.3em;color:rgba(255,255,255,.72);text-transform:uppercase;animation:fadeUp 1s .55s both}
+.ornament{display:flex;align-items:center;gap:14px;width:min(520px,90%);margin:27px 0}
+.ornament span{height:1px;background:linear-gradient(90deg,transparent,var(--gold));flex:1}
+.ornament i{width:9px;height:9px;border:1px solid var(--gold);transform:rotate(45deg);display:block}
+.ornament span:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+.date{font-family:Cinzel,serif;font-size:clamp(25px,5vw,43px);color:var(--cream);letter-spacing:.12em;animation:fadeUp 1s .65s both}
+.meta{margin-top:12px;color:rgba(255,255,255,.78);font-size:15px;letter-spacing:.08em;animation:fadeUp 1s .75s both}
+.meta strong{color:var(--gold2);font-weight:600}
+.aiko-wrap{
+  margin:26px 0 20px;
+  width:150px;height:150px;border-radius:50%;
+  padding:4px;background:linear-gradient(135deg,var(--gold2),#795a28,var(--gold2));
+  box-shadow:0 0 35px rgba(217,181,107,.25);
+  animation:float 4.8s ease-in-out infinite, fadeUp 1s .8s both;
+}
+.aiko{
+  width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;
+  border:2px solid #070706;
+}
+.message{max-width:590px;color:rgba(255,255,255,.86);font-size:16px;line-height:1.75;animation:fadeUp 1s .9s both}
+.message b{color:#fff}
+.cta{
+  margin-top:24px;padding:15px 34px;border:1px solid var(--gold2);
+  background:linear-gradient(180deg,rgba(217,181,107,.18),rgba(217,181,107,.05));
+  color:#fff;font:600 12px Inter, sans-serif;letter-spacing:.24em;text-transform:uppercase;
+  cursor:pointer;transition:.25s;animation:fadeUp 1s 1s both;
+}
+.cta:hover{transform:translateY(-2px);background:rgba(217,181,107,.2);box-shadow:0 10px 35px rgba(217,181,107,.12)}
+.note{margin-top:auto;padding-top:30px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);z-index:50}
+.modal.open{display:flex}
+.dialog{
+  width:min(520px,100%);background:#0d0d0b;border:1px solid var(--gold);
+  box-shadow:0 30px 90px rgba(0,0,0,.8);padding:30px;
+  animation:pop .35s ease both;
+}
+.dialog h2{font-family:Cinzel,serif;color:var(--gold2);letter-spacing:.1em;text-align:center;margin:0 0 8px}
+.dialog p{text-align:center;color:rgba(255,255,255,.7);font-size:14px;line-height:1.6;margin:0 0 24px}
+label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold2);margin-bottom:8px}
+input{
+  width:100%;padding:14px 13px;background:#070706;border:1px solid rgba(217,181,107,.45);
+  color:#fff;font-size:16px;outline:none;margin-bottom:18px;
+}
+input:focus{border-color:var(--gold2);box-shadow:0 0 0 2px rgba(217,181,107,.08)}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.answer{
+  padding:14px 8px;cursor:pointer;border:1px solid rgba(217,181,107,.55);
+  background:#12120f;color:#fff;text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:600;
+  transition:.2s;
+}
+.answer:hover{transform:translateY(-2px);border-color:var(--gold2);background:rgba(217,181,107,.12)}
+.answer.yes{background:linear-gradient(180deg,rgba(217,181,107,.18),rgba(217,181,107,.06))}
+.close{display:block;margin:18px auto 0;background:none;border:0;color:rgba(255,255,255,.45);cursor:pointer;font-size:12px}
+.status{text-align:center;margin-top:16px;font-size:13px;min-height:20px;color:var(--gold2)}
+.success{padding:25px 10px;text-align:center}.success .big{font-family:Cinzel,serif;font-size:26px;color:var(--gold2);margin-bottom:8px}.success p{margin:0}
+
+@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
+@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@media(max-width:600px){
+  body:before{inset:7px}.shell{padding:24px 10px}.card{padding:9px}.inner,.content{min-height:720px}
+  .content{padding:38px 20px 28px}.monogram{font-size:42px}.title{letter-spacing:.1em}.subtitle{letter-spacing:.2em}
+  .message{font-size:14px}.aiko-wrap{width:132px;height:132px}.note{font-size:8px;letter-spacing:.16em}
+}
 </style>
 </head>
 <body>
-<main class="page">
-  <section class="card reveal">
-    <div class="ornament">✦ &nbsp; EEN UITNODIGING &nbsp; ✦</div>
-    <div class="subtitle">Aiko heeft een belangrijke mededeling</div>
+<main class="shell">
+  <section class="card">
+    <div class="inner">
+      <div class="content">
+        <div class="kicker">Een uitnodiging van Aiko</div>
+        <div class="monogram">R</div>
+        <div class="title">REZA'S VERJAARDAG</div>
+        <div class="subtitle">Een avond om samen te vieren</div>
 
-    <div class="photo-wrap">
-      <img id="aiko" class="photo" src="aiko-1.jpeg" alt="Aiko">
+        <div class="ornament"><span></span><i></i><span></span></div>
+
+        <div class="date">24 OKTOBER 2026</div>
+        <div class="meta"><strong>19:00 uur</strong> · Oudkerkhof 13 C · Utrecht</div>
+
+        <div class="aiko-wrap"><img class="aiko" src="Aiko_verjaardag.gif" alt="Aiko"></div>
+
+        <div class="message">
+          Aiko heeft één belangrijke vraag voor je…<br>
+          <b>Ben jij erbij om Reza's verjaardag mee te vieren?</b>
+        </div>
+
+        <button class="cta" id="openBtn">Laat Aiko weten of je komt</button>
+        <div class="note">RSVP · alleen je naam is nodig</div>
+      </div>
     </div>
-
-    <h1>REZA'S<br>VERJAARDAG</h1>
-    <div class="divider"><span>✦</span></div>
-    <h2>24 OKTOBER 2026</h2>
-    <div class="details">vanaf 19:00<br>Oudkerkhof 13 C · Utrecht</div>
-    <div class="small">Je bent van harte uitgenodigd om samen met Reza te vieren. 🥂</div>
-    <button onclick="openRSVP()">RSVP</button>
   </section>
 </main>
 
-<div id="rsvp">
-  <div class="modal">
-    <div class="ornament">✦ RSVP ✦</div>
-    <h2>Kom je ook?</h2>
-    <p>Laat je naam achter.</p>
-    <input id="naam" placeholder="Je naam" autocomplete="name">
-    <br>
-    <button onclick="answer(true)">IK KOM 🎉</button>
-    <button class="close" onclick="answer(false)">Helaas, ik kan niet</button>
-    <p id="result" class="small"></p>
+<div class="modal" id="modal">
+  <div class="dialog">
+    <div id="formView">
+      <h2>RSVP</h2>
+      <p>Vul alleen je naam in en kies daarna je antwoord.</p>
+      <label for="name">Jouw naam</label>
+      <input id="name" type="text" autocomplete="name" placeholder="Bijv. Sophie" maxlength="80">
+      <div class="answers">
+        <button class="answer yes" data-answer="JA — ik kom">✓ Ik kom</button>
+        <button class="answer" data-answer="NEE — ik kan niet">✕ Ik kan niet</button>
+      </div>
+      <div class="status" id="status"></div>
+      <button class="close" id="closeBtn">Sluiten</button>
+    </div>
+    <div id="successView" class="success" style="display:none">
+      <div class="big">Dank je wel ✨</div>
+      <p id="successText"></p>
+      <button class="close" id="doneBtn">Sluiten</button>
+    </div>
   </div>
 </div>
 
 <script>
-function openRSVP(){document.getElementById('rsvp').style.display='grid'}
-function answer(yes){
- const n=document.getElementById('naam').value.trim();
- if(!n){document.getElementById('result').textContent='Vul eerst je naam in.';return}
- document.getElementById('result').textContent=yes
- ? 'Top, '+n+'! 🎉 Tot 24 oktober!'
- : 'Jammer, '+n+'! 😿';
+/*
+  WEB3FORMS:
+  1. Maak een gratis access key via https://web3forms.com/
+  2. Vervang ALLEEN de tekst hieronder door jouw access key.
+*/
+const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY_HERE";
+
+const modal = document.getElementById("modal");
+const openBtn = document.getElementById("openBtn");
+const closeBtn = document.getElementById("closeBtn");
+const doneBtn = document.getElementById("doneBtn");
+const nameInput = document.getElementById("name");
+const statusEl = document.getElementById("status");
+const formView = document.getElementById("formView");
+const successView = document.getElementById("successView");
+const successText = document.getElementById("successText");
+
+openBtn.onclick = () => {
+  modal.classList.add("open");
+  setTimeout(() => nameInput.focus(), 150);
+};
+function closeModal(){
+  modal.classList.remove("open");
+  statusEl.textContent = "";
+  nameInput.value = "";
+  formView.style.display = "";
+  successView.style.display = "none";
 }
-setInterval(()=>{
- const a=document.getElementById('aiko');
- a.style.display=a.style.display==='none'?'block':'none';
-},5000);
+closeBtn.onclick = closeModal;
+doneBtn.onclick = closeModal;
+modal.addEventListener("click", e => { if(e.target === modal) closeModal(); });
+
+document.querySelectorAll(".answer").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const name = nameInput.value.trim();
+    if(!name){
+      statusEl.textContent = "Vul eerst je naam in.";
+      nameInput.focus();
+      return;
+    }
+    if(WEB3FORMS_ACCESS_KEY === "YOUR_WEB3FORMS_ACCESS_KEY_HERE"){
+      statusEl.textContent = "De uitnodiging is nog niet gekoppeld aan de e-mailmelding.";
+      return;
+    }
+
+    const answer = btn.dataset.answer;
+    statusEl.textContent = "Even versturen…";
+    document.querySelectorAll(".answer").forEach(b => b.disabled = true);
+
+    try{
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method:"POST",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "RSVP Reza's verjaardag — " + answer,
+          from_name: "RSVP Reza's verjaardag",
+          name: name,
+          message: "Naam: " + name + "\nAntwoord: " + answer + "\nDatum: 24 oktober 2026\nTijd: 19:00\nLocatie: Oudkerkhof 13 C, Utrecht"
+        })
+      });
+      const data = await response.json();
+      if(data.success){
+        formView.style.display = "none";
+        successView.style.display = "";
+        successText.textContent = answer.startsWith("JA") 
+          ? "Leuk dat je erbij bent! Aiko heeft je antwoord doorgegeven."
+          : "Jammer dat je er niet bij kunt zijn. Aiko heeft je antwoord doorgegeven.";
+      } else {
+        statusEl.textContent = "Het versturen lukte niet. Probeer het nog een keer.";
+        document.querySelectorAll(".answer").forEach(b => b.disabled = false);
+      }
+    }catch(err){
+      statusEl.textContent = "Er ging iets mis met de verbinding. Probeer het opnieuw.";
+      document.querySelectorAll(".answer").forEach(b => b.disabled = false);
+    }
+  });
+});
 </script>
 </body>
 </html>
