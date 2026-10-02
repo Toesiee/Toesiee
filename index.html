@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reza's verjaardag</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+:root{--gold:#d8b56a;--cream:#f5e7bd;--dark:#070707}
+*{box-sizing:border-box}
+body{margin:0;background:#030303;color:var(--cream);font-family:Montserrat,Arial,sans-serif}
+.page{min-height:100vh;display:grid;place-items:center;padding:20px;position:relative;overflow:hidden}
+.page:before{content:"";position:absolute;inset:12px;border:1px solid rgba(216,181,106,.35);pointer-events:none}
+.card{width:min(760px,94vw);min-height:calc(100vh - 40px);max-height:900px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:34px 24px;position:relative}
+.ornament{font-family:Cinzel,serif;letter-spacing:.45em;color:var(--gold);font-size:12px}
+h1{font:600 clamp(38px,8vw,76px)/.98 Cinzel,serif;letter-spacing:.08em;margin:14px 0;color:#fff2ca}
+h2{font:500 clamp(22px,5vw,36px) Cinzel,serif;letter-spacing:.12em;margin:8px 0 20px}
+.subtitle{letter-spacing:.28em;text-transform:uppercase;font-size:12px;margin-top:8px}
+.photo-wrap{margin:24px 0 18px;position:relative}
+.photo{width:min(300px,68vw);height:min(300px,68vw);object-fit:cover;border-radius:50%;border:2px solid var(--gold);padding:6px;background:#0b0b0b;box-shadow:0 0 45px rgba(216,181,106,.16)}
+.photo2{display:none}
+.details{font:500 20px/1.8 Cinzel,serif}
+.small{font-size:14px;letter-spacing:.08em;opacity:.8;margin-top:14px}
+.divider{display:flex;align-items:center;gap:14px;width:min(430px,80vw);margin:10px 0}
+.divider:before,.divider:after{content:"";height:1px;background:var(--gold);opacity:.5;flex:1}
+.divider span{color:var(--gold)}
+button{font:600 13px Montserrat,Arial;border:1px solid var(--gold);background:var(--gold);color:#090909;padding:14px 25px;border-radius:2px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;margin-top:22px}
+button:hover{filter:brightness(1.1);transform:translateY(-1px)}
+#rsvp{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);place-items:center;padding:25px;z-index:5}
+.modal{width:min(520px,92vw);border:1px solid var(--gold);background:#090909;padding:34px;text-align:center}
+input{width:100%;padding:14px;background:#111;border:1px solid #806b43;color:white;margin:15px 0;font-size:16px}
+.close{background:transparent;color:var(--cream);margin-left:8px}
+@keyframes reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.reveal{animation:reveal 1s ease both}
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="card reveal">
+    <div class="ornament">✦ &nbsp; EEN UITNODIGING &nbsp; ✦</div>
+    <div class="subtitle">Aiko heeft een belangrijke mededeling</div>
+
+    <div class="photo-wrap">
+      <img id="aiko" class="photo" src="aiko-1.jpeg" alt="Aiko">
+    </div>
+
+    <h1>REZA'S<br>VERJAARDAG</h1>
+    <div class="divider"><span>✦</span></div>
+    <h2>24 OKTOBER 2026</h2>
+    <div class="details">vanaf 19:00<br>Oudkerkhof 13 C · Utrecht</div>
+    <div class="small">Je bent van harte uitgenodigd om samen met Reza te vieren. 🥂</div>
+    <button onclick="openRSVP()">RSVP</button>
+  </section>
+</main>
+
+<div id="rsvp">
+  <div class="modal">
+    <div class="ornament">✦ RSVP ✦</div>
+    <h2>Kom je ook?</h2>
+    <p>Laat je naam achter.</p>
+    <input id="naam" placeholder="Je naam" autocomplete="name">
+    <br>
+    <button onclick="answer(true)">IK KOM 🎉</button>
+    <button class="close" onclick="answer(false)">Helaas, ik kan niet</button>
+    <p id="result" class="small"></p>
+  </div>
+</div>
+
+<script>
+function openRSVP(){document.getElementById('rsvp').style.display='grid'}
+function answer(yes){
+ const n=document.getElementById('naam').value.trim();
+ if(!n){document.getElementById('result').textContent='Vul eerst je naam in.';return}
+ document.getElementById('result').textContent=yes
+ ? 'Top, '+n+'! 🎉 Tot 24 oktober!'
+ : 'Jammer, '+n+'! 😿';
+}
+setInterval(()=>{
+ const a=document.getElementById('aiko');
+ a.style.display=a.style.display==='none'?'block':'none';
+},5000);
+</script>
+</body>
+</html>
